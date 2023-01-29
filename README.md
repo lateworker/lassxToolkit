@@ -21,48 +21,48 @@
 
 #### 第二步: 解压文件
 
-![第二步](.\output\2.jpg)
+![第二步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/2.jpg)
 
-![第二步](.\output\3.jpg)
+![第二步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/3.jpg)
 
 #### 第三步: 解压RealESR模型
 
-![第三步](.\output\4.jpg)
+![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/4.jpg)
 
-![第三步](.\output\5.jpg)
+![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/5.jpg)
 
-![第三步](.\output\6.jpg)
+![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/6.jpg)
 
-![第三步](.\output\7.jpg)
+![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/7.jpg)
 
-![第三步](.\output\8.jpg)
+![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/8.jpg)
 
-![第三步](.\output\9.jpg)
+![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/9.jpg)
 
 #### 第四步: 检查目录结构
 
-![第四步](.\output\11.jpg)
+![第四步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/11.jpg)
 
 #### 第五步: 运行根目录下RealESR_Tools程序
 
-![第五步](.\output\10.jpg)
+![第五步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/10.jpg)
 
 ### 使用方法
 
 - #### 主程序: RealESR_Tools.exe
 
   ```c++
-  Version: 2.7.5 Release					// 版本号
-  Process									// 开始处理图片
-  Exit									// 退出程序
+  Version: 2.7.5 Release			      		// 版本号
+  Process								              	// 开始处理图片
+  Exit								                	// 退出程序
   
-  Settings								// 设置板块
+  Settings						               		// 设置板块
   - RealESR Mode:	[Your RealESR Mode]		// 设置RealESR模型
-  - Input Path:	[Your Input Path]		// 设置输入文件或文件夹路径
+  - Input Path:	[Your Input Path]	    	// 设置输入文件或文件夹路径
   - Output Path:	[Your Output Path]		// 设置输出文件夹路径
-  - Selector:		[Your Selector]			// 设置筛选器
-  Save									// 保存设置
-  Reset									// 将设置恢复为默认值
+  - Selector:		[Your Selector]		     	// 设置筛选器
+  Save								                	// 保存设置
+  Reset							                		// 将设置恢复为默认值
   ```
 
 - #### 设置板块详解
