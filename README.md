@@ -21,31 +21,31 @@
 
 #### 第二步: 解压文件
 
-![第二步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/2.jpg)
+![第二步](https://github.com/Tptr-lateworker/RealESR_Tools/blob/main/output/2.jpg)
 
-![第二步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/3.jpg)
+![第二步](https://github.com/Tptr-lateworker/RealESR_Tools/blob/main/output/3.jpg)
 
 #### 第三步: 解压RealESR模型
 
-![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/4.jpg)
+![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/blob/main/output/4.jpg)
 
-![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/5.jpg)
+![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/blob/main/output/5.jpg)
 
-![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/6.jpg)
+![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/blob/main/output/6.jpg)
 
-![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/7.jpg)
+![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/blob/main/output/7.jpg)
 
-![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/8.jpg)
+![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/blob/main/output/8.jpg)
 
-![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/9.jpg)
+![第三步](https://github.com/Tptr-lateworker/RealESR_Tools/blob/main/output/9.jpg)
 
 #### 第四步: 检查目录结构
 
-![第四步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/11.jpg)
+![第四步](https://github.com/Tptr-lateworker/RealESR_Tools/blob/main/output/11.jpg)
 
 #### 第五步: 运行根目录下RealESR_Tools程序
 
-![第五步](https://github.com/Tptr-lateworker/RealESR_Tools/tree/main/output/10.jpg)
+![第五步](https://github.com/Tptr-lateworker/RealESR_Tools/blob/main/output/10.jpg)
 
 ### 使用方法
 
