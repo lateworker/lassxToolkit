@@ -145,6 +145,7 @@ void modelReset() {
 	vector<string> defaultConfig = {""};
 	loadfromConfig(defaultConfig, RealesrTools.menustyle.data, aiConfig.model + "Default");
 	if (defaultConfig[1] == aiConfig.scale and defaultConfig[2] == aiConfig.inputpath and defaultConfig[3] == aiConfig.outputpath and defaultConfig[4] == aiConfig.selector and defaultConfig[5] == aiConfig.noise) return;
+	record.data.resize(6);
 	record.data[1] = defaultConfig[1];
 	record.data[5] = defaultConfig[5];
 	aiConfig.loadfromConfig(record.data);
@@ -271,6 +272,7 @@ void Reset() {
 	loadfromConfig(defaultConfig, RealesrTools.menustyle.data, aiConfig.model + "Default");
 	if (defaultConfig[1] == aiConfig.scale and defaultConfig[2] == aiConfig.inputpath and defaultConfig[3] == aiConfig.outputpath and defaultConfig[4] == aiConfig.selector and defaultConfig[5] == aiConfig.noise) return;
 	isalert = true;
+	record.data.resize(6);
 	for (size_t i = 1; i <= 5; ++i) {
 		record.data[i] = defaultConfig[i];
 	}
