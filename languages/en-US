@@ -2,7 +2,7 @@ realesrganMenu{
 realesrnetMenu{
 DF2KMenu{
 DF2K-JPEGMenu{
-"Version 3.7.0":"7"
+"Version 3.0.1":"7"
 "Process":"11"
 "Exit":"11"
 "":"7"
@@ -16,7 +16,7 @@ DF2K-JPEGMenu{
 "Reset":"11"
 }
 realesrgan-animeMenu{
-"Version 3.7.0":"7"
+"Version 3.0.1":"7"
 "Process":"11"
 "Exit":"11"
 "":"7"
@@ -32,7 +32,7 @@ realesrgan-animeMenu{
 realcuganMenu{
 waifu2x-animeMenu{
 waifu2x-photoMenu{
-"Version 3.7.0":"7"
+"Version 3.0.1":"7"
 "Process":"11"
 "Exit":"11"
 "":"7"

@@ -1,6 +1,8 @@
 realesrganMenu{
 realesrnetMenu{
-"Version 3.7.0":"7"
+DF2KMenu{
+DF2K-JPEGMenu{
+"Version 3.0.1":"7"
 "开始处理":"11"
 "退出程序":"11"
 "":"7"
@@ -14,7 +16,7 @@ realesrnetMenu{
 "重置设置":"11"
 }
 realesrgan-animeMenu{
-"Version 3.7.0":"7"
+"Version 3.0.1":"7"
 "开始处理":"11"
 "退出程序":"11"
 "":"7"
@@ -30,7 +32,7 @@ realesrgan-animeMenu{
 realcuganMenu{
 waifu2x-animeMenu{
 waifu2x-photoMenu{
-"Version 3.7.0":"7"
+"Version 3.0.1":"7"
 "开始处理":"11"
 "退出程序":"11"
 "":"7"
@@ -53,10 +55,14 @@ modelMenu{
 "realcugan":"11"
 "waifu2x-anime":"11"
 "waifu2x-photo":"11"
+"DF2K":"11"
+"DF2K-JPEG":"11"
 }
 
 realesrgan-scaleMenu{
 realesrnet-scaleMenu{
+DF2K-scaleMenu{
+DF2K-JPEG-scaleMenu{
 }
 realesrgan-anime-scaleMenu{
 realcugan-scaleMenu{
@@ -105,6 +111,8 @@ exitMenu{
 realesrganDefault{
 realesrnetDefault{
 realesrgan-animeDefault{
+DF2KDefault{
+DF2K-JPEGDefault{
 "4"
 "."
 "."
