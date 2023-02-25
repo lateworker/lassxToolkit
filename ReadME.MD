@@ -1,6 +1,6 @@
 # RealESR Tools
 
-## *Version 3.7.0 Release*
+## *Version 3.0.1 Release*
 
 ### AI图片放大工具, 支持自动遍历文件夹, 支持批量处理.
 
@@ -10,6 +10,8 @@
 
 - 支持自定义语言包.
 - 加入了更多模型.
+- 将`realesrgan-anime`模型替换为Ram版本
+- 修复了配置文件不存在导致的错误
 
 ### 特点
 
