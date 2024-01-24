@@ -1,0 +1,5 @@
+本项目用到了以下几个头文件:
+path.h (自编)
+record.h (自编)
+configor (来自Github-Nomango)
+用于遍历文件夹 & 读取配置文件.
