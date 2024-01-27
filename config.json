@@ -1,0 +1,23 @@
+{
+	"input_path": "\"D:\\Users\\lateworker\\Desktop\\input\"",
+	"output_path": "\"D:\\Users\\lateworker\\Desktop\\output\"",
+	"error_path": "error",
+	"selector": "*",
+	"model":"realesrgan-anime",
+	"scale":"4",
+	"denoise":"0",
+	"syncgap":"0",
+	"tree_restore": true,
+	"subdir_find": true,
+	"emptydir_find": true,
+	"file_error": true,
+	"dir_error": false,
+	"match": [],
+	"addons": {
+		"first": [],
+		"second": [],
+		"third": [
+			"print.exe"
+		]
+	}
+}
