@@ -125,6 +125,7 @@ struct Config {
 	inline void init() {
 		strdelete(input_path);
 		strdelete(output_path);
+		strdelete(error_path);
 		strdelete(selector);
 		pos_slash	 	= input_path.find_last_of('\\');
 		pos_dot 		= input_path.find_last_of('.');
