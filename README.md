@@ -1,6 +1,8 @@
 # lassxTookit
 
-## Version 4.0.0.b Beta
+## Version 4.0.0.c Beta
+
+2024.2.7 update：修复了error_path中含有双引号时 出现的系统路径错误。
 
 ### **注意！RealESR_Tools 已正式更名为 lassxTookit！早于 4.0.0 的版本暂时不受影响！可自行去 Release 中下载**
 
