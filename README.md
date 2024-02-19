@@ -1,12 +1,18 @@
 # lassxTookit
 
-## Version 4.0.0.c Beta
+## Version 4.1.a Beta
 
-2024.2.7 update：修复了error_path中含有双引号时 出现的系统路径错误。
+2024.2.19 update（标粗为版本升级带来的变动）：
+
+- **修改了输入路径的判断方法（判断 文件 / 文件夹）**
+
+- 修正了 xcopy 的 /-i 开关在旧版Windows系统中无法使用的问题
+
+- 修正了程序在 pos_slash 变量为 infinity 时（输入路径中没有 ”\\“ ）的异常行为。
 
 ### **注意！RealESR_Tools 已正式更名为 lassxTookit！早于 4.0.0 的版本暂时不受影响！可自行去 Release 中下载**
 
-Version 4.0.0 Beta 为内测版本，没有UI界面（需要手动修改配置文件）。有任何 ‘使用方面的问题 / BUG’ 应在 ‘[B站](https://space.bilibili.com/454920362) / [Github](https://github.com/lateworker/lassxTookit) / QQ群（935718273）/ ~~洛谷~~ ’ 提出。
+Version 4.1.a Beta 为内测版本，没有UI界面（需要手动修改配置文件）。有任何 ‘使用方面的问题 / BUG’ 应在 ‘[B站](https://space.bilibili.com/454920362) / [Github](https://github.com/lateworker/lassxTookit) / QQ群（935718273）/ ~~洛谷~~ ’ 提出。
 
 ## 使用方法
 

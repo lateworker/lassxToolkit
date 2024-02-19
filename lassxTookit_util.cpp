@@ -4,34 +4,12 @@
 #include <stdlib.h>
 #include "include/configor/json.hpp"
 #include "include/path.h"
+#include "include/system.h"
 
 using namespace std;
 using namespace path;
 using namespace configor;
 string selfPath, selfName;
-
-inline string strquote(string x) { return "\"" + x + "\""; }
-inline void strdelete(string &data) {
-	while (data.front() == '\"') data.erase(data.begin());
-	while (data.back() == '\"') data.erase(data.end() - 1);
-	while (data.front() == '\\' || data.front() == '/') data.erase(data.begin());
-	while (data.back() == '\\' || data.back() == '/') data.erase(data.end() - 1);
-	for (size_t i = 1; i < data.size(); ++i)
-		if ((data[i] == '\\' && data[i - 1] == data[i]) || (data[i] == '/' && data[i - 1] == data[i]))
-			data.erase(data.begin() + i), --i;
-}
-inline void strsplit(string x, string &path, string &name) {
-	name = path = "";
-	size_t pos = x.find_last_of("\\");
-	if (pos == string::npos)
-		path = ".", name = x;
-	else {
-		name = x.substr(pos);
-		strdelete(name);
-		path = x.substr(0, pos);
-		strdelete(path);
-	}
-}
 
 inline bool loadConfig(string path, json::value &data) {
 	data.clear();
@@ -100,7 +78,7 @@ struct Config {
 	string config_path;
 	string input_path, output_path, error_path, selector;
 	string model, scale, denoise, syncgap;
-	size_t pos_slash, pos_dot, is_file;
+	size_t pos_slash, is_file;
 	bool tree_restore, subdir_find, emptydir_find;
 	bool file_error, dir_error;
 	RegexRule match;
@@ -123,13 +101,13 @@ struct Config {
 	    OPTIONAL(dir_error, "dir_error")
 	);
 	inline void init() {
-		strdelete(input_path);
-		strdelete(output_path);
-		strdelete(error_path);
-		strdelete(selector);
+		pathDelete(input_path);
+		pathDelete(output_path);
+		pathDelete(error_path);
+		pathDelete(selector);
 		pos_slash	 	= input_path.find_last_of('\\');
-		pos_dot 		= input_path.find_last_of('.');
-		is_file 		= pos_dot != string::npos && (pos_slash == string::npos || pos_slash < pos_dot);
+		if (pos_slash == string::npos) pos_slash = 0;
+		is_file 		= getFileAttribute(input_path).is_file();
 	}
 	inline bool init(const string &configPath) {
 		json::value configData;
@@ -164,34 +142,13 @@ struct Config {
 		error_path = "";
 		selector = "*";
 		denoise = syncgap = "0";
-		pos_slash = pos_dot = is_file = 0;
+		pos_slash = is_file = 0;
 		tree_restore = subdir_find = emptydir_find = false;
 		file_error = true, dir_error = false;
 		match = RegexRule();
 		addons = Addon();
 	}
 };
-
-inline void makedir(string path) {
-	system(("md " + strquote(path) + " >nul 2>&1").c_str());
-}
-inline void removedir(string path) {
-	system(("rd " + strquote(path) + " >nul 2>&1").c_str());
-}
-inline void copyfile(string file_path, string direction_path) {
-	system(("xcopy /c/q/g/k/r/h/y/-i " + strquote(file_path) + " " + strquote(direction_path) + " >nul 2>&1").c_str());
-}
-inline void movefile(string file_path, string direction_path) {
-	system(("move /y " + strquote(file_path) + " " + strquote(direction_path) + " >nul 2>&1").c_str());
-}
-inline void executefile(string file) { system(file.c_str()); }
-inline void deletefile(string file) {
-	system(("del /f/s/q " + strquote(file) + " >nul 2>&1").c_str());
-}
-inline bool existfile(string path) {
-	struct stat file_buffer;
-	return (stat(path.c_str(), &file_buffer) == 0);
-}
 
 #define Waifu2x_Anime "models-upconv_7_anime_style_art_rgb"
 #define Waifu2x_Photo "models-upconv_7_photo"
@@ -205,23 +162,23 @@ inline void core(const Config &file) {
 	string command;
 	if (getgroup_model(file.model) == 1) {
 		command = (string)"models\\realesrgan.exe"
-		          + " -i " + strquote(file.input_path)
-		          + " -o " + strquote(file.output_path)
-		          + " -n " + strquote(file.model + "-x" + file.scale)
+		          + " -i " + pathQuote(file.input_path)
+		          + " -o " + pathQuote(file.output_path)
+		          + " -n " + pathQuote(file.model + "-x" + file.scale)
 		          + " -s " + file.scale;
 	}
 	if (getgroup_model(file.model) == 2) {
 		command = (string)"models\\waifu2x.exe"
-		          + " -i " + strquote(file.input_path)
-		          + " -o " + strquote(file.output_path)
-		          + " -m " + strquote(file.model == "waifu2x-anime" ? Waifu2x_Anime : Waifu2x_Photo)
+		          + " -i " + pathQuote(file.input_path)
+		          + " -o " + pathQuote(file.output_path)
+		          + " -m " + pathQuote(file.model == "waifu2x-anime" ? Waifu2x_Anime : Waifu2x_Photo)
 		          + " -s " + file.scale
 		          + " -n " + file.denoise;
 	}
 	if (getgroup_model(file.model) == 3) {
 		command = (string)"models\\realcugan.exe"
-		          + " -i " + strquote(file.input_path)
-		          + " -o " + strquote(file.output_path)
+		          + " -i " + pathQuote(file.input_path)
+		          + " -o " + pathQuote(file.output_path)
 		          + " -s " + file.scale
 		          + " -n " + file.denoise
 		          + " -c " + file.syncgap;
@@ -235,11 +192,11 @@ string to_string(const json::value &x) {
 	for (size_t i = 0; i < res.size(); ++i)
 		if (res[i] == '\"')
 			res.insert(i++, "\\");
-	strdelete(res);
+	pathDelete(res);
 	return res;
 }
 string Addon_getRelativePath(const Config &config, string x) {
-	x = x.substr(config.output_path.size()); strdelete(x);
+	x = x.substr(config.output_path.size()); pathDelete(x);
 	return x;
 }
 json::value to_json(const Config &config, const vector<string> &data) {
@@ -252,7 +209,7 @@ json::value to_json(const Config &config, const vector<string> &data) {
 inline void process_error(const Config &config, const Config &data) {
 	string errorPath = config.error_path;
 	errorPath = errorPath + "\\" + data.input_path.substr(0, data.pos_slash).substr(config.output_path.size());
-	strdelete(errorPath);
+	pathDelete(errorPath);
 	makedir(errorPath);
 	movefile(data.input_path, errorPath);
 }
@@ -260,7 +217,7 @@ void executeAddon(const Config &config, const vector<string> &execute, const str
 	for (string x : execute) {
 		copyfile("addons\\" + x, config.output_path + "\\" + x);
 		chdir(config.output_path.c_str());
-		executefile(x + " " + strquote(parameter1) + " " + strquote(parameter2));
+		executefile(x + " " + pathQuote(parameter1) + " " + pathQuote(parameter2));
 		deletefile(x);
 		chdir(selfPath.c_str());
 	}
@@ -273,7 +230,7 @@ void process(const Config &config) {
 	vector<string> data_addons;
 	if (config.is_file) {
 		Config _file = config.getSubConfig(nullptr);
-		if (config.file_error && existfile(_file.input_path)) {
+		if (config.file_error && pathExist(_file.input_path)) {
 			process_error(config, _file);
 		}
 		copyfile(config.input_path, _file.input_path);
@@ -286,7 +243,7 @@ void process(const Config &config) {
 		for (TraverseData x : data) {
 			if (!x.attrib.is_folder() && config.checkRegex(x.name, x.path)) {
 				Config _file = config.getSubConfig(&x);
-				if (config.file_error && existfile(_file.input_path)) {
+				if (config.file_error && pathExist(_file.input_path)) {
 					process_error(config, _file);
 				}
 				data_addons.push_back(_file.input_path);
@@ -296,7 +253,7 @@ void process(const Config &config) {
 			}
 			if (config.tree_restore && x.attrib.is_folder() && config.checkRegex(x.name, x.path)) {
 				Config _dir = config.getSubConfig(&x);
-				if (config.dir_error && existfile(_dir.input_path)) {
+				if (config.dir_error && pathExist(_dir.input_path)) {
 					process_error(config, _dir);
 				}
 				data_addons.push_back(_dir.input_path);
@@ -310,13 +267,14 @@ void process(const Config &config) {
 }
 
 int main(int n, char **configPath) {
-	strsplit(_pgmptr, selfPath, selfName);
-	strdelete(selfPath), strdelete(selfName);
+	pathSplit(_pgmptr, selfPath, selfName);
+	pathDelete(selfPath), pathDelete(selfName);
 	for (int i = 1; i < n; ++i) {
 		Config config;
 		bool is_failed = config.init(configPath[i]);
 		if (is_failed) {
-			puts("Error");
+			puts("ConfigFile Error");
+			system("pause");
 //			Create config file as default && reload
 			continue;
 		}
