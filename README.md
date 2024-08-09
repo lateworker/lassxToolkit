@@ -1,4 +1,4 @@
-# lassxTookit
+# lassxToolkit
 
 ## Version 4.1.a Beta
 
@@ -10,9 +10,9 @@
 
 - 修正了程序在 pos_slash 变量为 infinity 时（输入路径中没有 ”\\“ ）的异常行为。
 
-### **注意！RealESR_Tools 已正式更名为 lassxTookit！早于 4.0.0 的版本暂时不受影响！可自行去 Release 中下载**
+### **注意！RealESR_Tools 已正式更名为 lassxToolkit！早于 4.0.0 的版本暂时不受影响！可自行去 Release 中下载**
 
-Version 4.1.a Beta 为内测版本，没有UI界面（需要手动修改配置文件）。有任何 ‘使用方面的问题 / BUG’ 应在 ‘[B站](https://space.bilibili.com/454920362) / [Github](https://github.com/lateworker/lassxTookit) / QQ群（935718273）/ ~~洛谷~~ ’ 提出。
+Version 4.1.a Beta 为内测版本，没有UI界面（需要手动修改配置文件）。有任何 ‘使用方面的问题 / BUG’ 应在 ‘[B站](https://space.bilibili.com/454920362) / [Github](https://github.com/lateworker/lassxToolkit) / QQ群（935718273）/ ~~洛谷~~ ’ 提出。
 
 ## 使用方法
 
@@ -283,7 +283,7 @@ tree_restore 参数功能很简单，当它为 true 时，程序会自动在输�
 
 ### 正则表达式匹配介绍
 
-lassxTookit 于 Version 4.0.0.b Beta 版本加入正则表达式功能。此功能在效果上与普通正则表达式无异，是一个**黑名单**，可以借此筛掉一些不需要处理的文件。
+lassxToolkit 于 Version 4.0.0.b Beta 版本加入正则表达式功能。此功能在效果上与普通正则表达式无异，是一个**黑名单**，可以借此筛掉一些不需要处理的文件。
 
 正则表达式的详细介绍可以参见菜鸟教程：[正则表达式教程 | 菜鸟教程](https://www.runoob.com/regexp)
 
@@ -318,7 +318,7 @@ MatchMode（匹配模式）现有 "search"（搜索）、"match"（完全匹配�
 
 ### 插件模块介绍
 
-lassxTookit 于 Version 4.0.0.b Beta 版本同时引入了插件功能。
+lassxToolkit 于 Version 4.0.0.b Beta 版本同时引入了插件功能。
 
 **所有自己写的插件都要放到项目根目录下 addons 文件夹里！**
 
