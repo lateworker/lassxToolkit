@@ -1,5 +1,7 @@
 # lassxToolkit
 
+AI图片放大工具，整合了多种模型，支持自动遍历文件夹，支持批量处理。
+
 ## Version 4.1.a Beta
 
 2024.2.19 update（标粗为版本升级带来的变动）：
@@ -12,7 +14,7 @@
 
 ### **注意！RealESR_Tools 已正式更名为 lassxToolkit！早于 4.0.0 的版本暂时不受影响！可自行去 Release 中下载**
 
-Version 4.1.a Beta 为内测版本，没有UI界面（需要手动修改配置文件）。有任何 ‘使用方面的问题 / BUG’ 应在 ‘[B站](https://space.bilibili.com/454920362) / [Github](https://github.com/lateworker/lassxToolkit) / QQ群（935718273）/ ~~洛谷~~ ’ 提出。
+Version 4.1.a Beta 为内测版本，没有UI界面（需要手动修改配置文件）。有任何 ‘使用方面的问题 / BUG’ 应在 ‘[Github](https://github.com/lateworker/lassxToolkit) / QQ群（935718273）/ ~~洛谷~~ ’ 提出。
 
 ## 使用方法
 
@@ -156,9 +158,9 @@ Version 4.1.a Beta 为内测版本，没有UI界面（需要手动修改配置�
   
   - realesrgan模型-用时30min 
   
-  - realesrgan-anime模型-用时14min. 
-  
-  此数据来自B站用户：ZXOJ-LJX-安然x。~~其实就是同学帮忙测的~~
+  - realesrgan-anime模型-用时14min.
+ 
+    感谢 LJX 提供性能数据。
 
 - 注意：关于显存占用问题，
   
@@ -166,7 +168,7 @@ Version 4.1.a Beta 为内测版本，没有UI界面（需要手动修改配置�
   
   - 集显可以直接在任务管理器中看到。
 
-- **对真实图片进行超分不能使用anime模型！** ~~会有意外惊喜~~
+- **对真实图片进行超分不能使用anime模型！** 
 
 ### 选择器（selector）介绍
 
