@@ -1,4 +1,4 @@
-# 注意！本工具箱的后续开发将转至另一仓库，本仓库内的所有内容将作为历史版本归档。
+# 注意！本工具箱的后续开发将转至[这个仓库](https://github.com/lateworker/ImageSR-Toolkit)，本仓库内的所有内容将作为历史版本归档。
 
 # lassxToolkit
 
